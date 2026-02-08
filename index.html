@@ -13,15 +13,139 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎗️</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4a843'><path d='M12 2C9.5 2 7.5 4 7.5 6.5c0 1.5.7 2.8 1.8 3.7L12 21l2.7-10.8c1.1-.9 1.8-2.2 1.8-3.7C16.5 4 14.5 2 12 2z'/></svg>">
 </head>
 <body>
+
+  <!-- SVG Icon Definitions -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <!-- Ribbon / Awareness -->
+    <symbol id="icon-ribbon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2C9.5 2 7.5 4 7.5 6.5c0 1.5.7 2.8 1.8 3.7L12 21l2.7-10.8c1.1-.9 1.8-2.2 1.8-3.7C16.5 4 14.5 2 12 2z"/>
+    </symbol>
+    <!-- Lightbulb -->
+    <symbol id="icon-lightbulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18h6"/><path d="M10 22h4"/>
+      <path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/>
+    </symbol>
+    <!-- Microscope -->
+    <symbol id="icon-microscope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0-4-12.7"/>
+      <path d="M9 14h1"/><path d="M9 2v6"/><path d="M13 2v6"/><path d="M9 8h4"/>
+    </symbol>
+    <!-- Hourglass -->
+    <symbol id="icon-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 22h14"/><path d="M5 2h14"/>
+      <path d="M17 22v-4.2a2 2 0 0 0-.6-1.4L12 12l-4.4 4.4a2 2 0 0 0-.6 1.4V22"/>
+      <path d="M7 2v4.2a2 2 0 0 0 .6 1.4L12 12l4.4-4.4a2 2 0 0 0 .6-1.4V2"/>
+    </symbol>
+    <!-- Globe -->
+    <symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </symbol>
+    <!-- Target / Pain -->
+    <symbol id="icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+    </symbol>
+    <!-- Flame / Painful periods -->
+    <symbol id="icon-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2.5-.5-2.5S12 8 12 6.5c0 0 4 3 4 7.5a4 4 0 0 1-8 0 2.5 2.5 0 0 0 .5.5z"/>
+      <path d="M12 22c4-2 6-5 6-9 0-5-4-9-6-11-2 2-6 6-6 11 0 4 2 7 6 9z"/>
+    </symbol>
+    <!-- Heart crack / Pain during intimacy -->
+    <symbol id="icon-heart-crack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.4 4.6a5.5 5.5 0 0 0-7.8 0L12 5.2l-.6-.6a5.5 5.5 0 0 0-7.8 7.8l.6.6L12 20.8l7.8-7.8.6-.6a5.5 5.5 0 0 0 0-7.8z"/>
+      <path d="M12 5.2l-1 4 2 2-1 4"/>
+    </symbol>
+    <!-- Droplets / Bleeding -->
+    <symbol id="icon-droplets" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 16.3c2.2 0 4-1.8 4-4 0-2.3-4-7.3-4-7.3S3 10 3 12.3c0 2.2 1.8 4 4 4z"/>
+      <path d="M17 16.3c2.2 0 4-1.8 4-4 0-2.3-4-7.3-4-7.3s-4 5-4 7.3c0 2.2 1.8 4 4 4z"/>
+    </symbol>
+    <!-- Baby / Infertility -->
+    <symbol id="icon-baby" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/>
+      <path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/>
+    </symbol>
+    <!-- Cloud / Brain fog -->
+    <symbol id="icon-cloud-fog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2"/>
+      <path d="M8 19h5"/><path d="M6 22h9"/>
+    </symbol>
+    <!-- Stomach / Digestive -->
+    <symbol id="icon-stomach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2C8 2 5 5 5 9c0 3 1 5 3 7 1.5 1.5 2 3 2 5h4c0-2 .5-3.5 2-5 2-2 3-4 3-7 0-4-3-7-7-7z"/>
+      <path d="M9 18h6"/><path d="M10 22h4"/>
+    </symbol>
+    <!-- Droplet single / Urinary -->
+    <symbol id="icon-droplet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2.7S5 9.7 5 14.5a7 7 0 0 0 14 0C19 9.7 12 2.7 12 2.7z"/>
+    </symbol>
+    <!-- Alert triangle -->
+    <symbol id="icon-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10.3 3.9L1.7 18.4A2 2 0 0 0 3.4 21h17.2a2 2 0 0 0 1.7-2.6L13.7 3.9a2 2 0 0 0-3.4 0z"/>
+      <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+    </symbol>
+    <!-- Megaphone / Speech -->
+    <symbol id="icon-megaphone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 11l18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 0 1-5.8-1.6"/>
+    </symbol>
+    <!-- Pill / Medicine -->
+    <symbol id="icon-pill" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10.5 1.5l-8 8a5 5 0 0 0 7 7l8-8a5 5 0 0 0-7-7z"/><path d="M6.5 11.5L12.5 5.5"/>
+    </symbol>
+    <!-- Medical cross -->
+    <symbol id="icon-medical" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 2h8v6h6v8h-6v6H8v-6H2V8h6V2z"/>
+    </symbol>
+    <!-- Scalpel / Surgery -->
+    <symbol id="icon-scalpel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.4 3.6a2 2 0 0 0-2.8 0L6 15.2c-1.5 1.5-1.5 3.5 0 5l.8.8 3-3L20.4 6.4a2 2 0 0 0 0-2.8z"/>
+      <path d="M6.8 21c-2 0-3.5-.5-4.3-1.3S1 17.2 1 15.2"/>
+    </symbol>
+    <!-- Lotus / Wellness -->
+    <symbol id="icon-lotus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 20c-4 0-7-2-8-5 2-1 4.5-1 6.5 0 .5.2 1 .5 1.5.8.5-.3 1-.6 1.5-.8 2-1 4.5-1 6.5 0-1 3-4 5-8 5z"/>
+      <path d="M12 4c2 3 2 7 0 10"/>
+      <path d="M7 8c1 2 2.5 4 5 6"/>
+      <path d="M17 8c-1 2-2.5 4-5 6"/>
+    </symbol>
+    <!-- Heart / Support -->
+    <symbol id="icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.4 4.6a5.5 5.5 0 0 0-7.8 0L12 5.2l-.6-.6a5.5 5.5 0 0 0-7.8 7.8l.6.6L12 20.8l7.8-7.8.6-.6a5.5 5.5 0 0 0 0-7.8z"/>
+    </symbol>
+    <!-- Coins / Donate -->
+    <symbol id="icon-coins" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="8" cy="8" r="6"/><path d="M18.1 10.9a6 6 0 0 1-8.1 8.1"/><circle cx="16" cy="16" r="6"/>
+    </symbol>
+    <!-- Building / Policy -->
+    <symbol id="icon-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 22V6l9-4 9 4v16"/><path d="M12 2v20"/><path d="M3 10h18"/><path d="M7 14h2"/><path d="M15 14h2"/>
+    </symbol>
+    <!-- Stethoscope -->
+    <symbol id="icon-stethoscope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.8 2.1A2 2 0 0 0 3 4v1a6 6 0 0 0 12 0V4a2 2 0 0 0-1.8-1.9"/>
+      <circle cx="18" cy="12" r="2"/><path d="M18 14v2a6 6 0 0 1-12 0v-1"/>
+    </symbol>
+    <!-- Shirt / Wear Yellow -->
+    <symbol id="icon-shirt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.4 7.3l-3.9-3.8c-.6-.6-1.5-.5-2.1.1L12 6 9.6 3.6c-.6-.6-1.5-.7-2.1-.1L3.6 7.3c-.6.6-.5 1.5.1 2.1L6 11.5V20a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-8.5l2.3-2.1c.6-.6.7-1.5.1-2.1z"/>
+    </symbol>
+    <!-- Chat / Advocate -->
+    <symbol id="icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </symbol>
+    <!-- X-circle / Myth false -->
+    <symbol id="icon-x-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6"/><path d="M9 9l6 6"/>
+    </symbol>
+  </svg>
 
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="container nav-container">
       <a href="#" class="nav-logo">
-        <span class="logo-ribbon">🎗️</span>
+        <span class="logo-ribbon"><svg class="icon icon-logo"><use href="#icon-ribbon"/></svg></span>
         <span>EndoAware</span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -79,13 +203,17 @@
         <span class="section-tag">Understanding the Condition</span>
         <h2>What is Endometriosis?</h2>
       </div>
+      <div class="about-image-banner">
+        <img src="images/about-wildflowers.jpg" alt="A hand gently touching yellow wildflowers in warm light" loading="lazy">
+        <span class="photo-credit">Photo by Daizy Isumi on Unsplash</span>
+      </div>
       <div class="about-grid">
         <div class="about-text">
           <p class="lead">Endometriosis is a chronic, often debilitating condition where tissue similar to the lining of the uterus grows outside of it — on the ovaries, fallopian tubes, bowel, and other areas of the pelvic cavity.</p>
           <p>This displaced tissue acts like normal endometrial tissue — it thickens, breaks down, and bleeds with each menstrual cycle. But because it has no way to exit the body, it becomes trapped, leading to inflammation, scarring, adhesions, and severe pain.</p>
           <p>Endometriosis is <strong>not just "bad periods."</strong> It is a systemic inflammatory disease that can affect nearly every aspect of a person's life — from physical health to mental wellbeing, relationships, careers, and fertility.</p>
           <div class="about-highlight">
-            <div class="highlight-icon">💡</div>
+            <div class="highlight-icon"><svg class="icon"><use href="#icon-lightbulb"/></svg></div>
             <div>
               <strong>Did you know?</strong> Endometriosis has been found in every organ of the body, including the lungs, brain, and skin. It is not limited to the reproductive system.
             </div>
@@ -93,17 +221,17 @@
         </div>
         <div class="about-visual">
           <div class="info-card">
-            <div class="info-card-icon">🔬</div>
+            <div class="info-card-icon"><svg class="icon"><use href="#icon-microscope"/></svg></div>
             <h3>Complex Disease</h3>
             <p>Endometriosis involves the immune system, hormonal system, and genetic factors. It is not caused by anything a person did or didn't do.</p>
           </div>
           <div class="info-card">
-            <div class="info-card-icon">⏳</div>
+            <div class="info-card-icon"><svg class="icon"><use href="#icon-hourglass"/></svg></div>
             <h3>Delayed Diagnosis</h3>
             <p>On average, it takes 7–10 years from symptom onset to receive a diagnosis, during which many are dismissed or misdiagnosed.</p>
           </div>
           <div class="info-card">
-            <div class="info-card-icon">🌍</div>
+            <div class="info-card-icon"><svg class="icon"><use href="#icon-globe"/></svg></div>
             <h3>Global Impact</h3>
             <p>Endometriosis costs the global economy over $80 billion annually in healthcare and lost productivity, yet remains critically underfunded.</p>
           </div>
@@ -122,48 +250,48 @@
       </div>
       <div class="symptoms-grid">
         <div class="symptom-card" data-aos>
-          <div class="symptom-icon">🔴</div>
+          <div class="symptom-icon"><svg class="icon"><use href="#icon-target"/></svg></div>
           <h3>Chronic Pelvic Pain</h3>
           <p>Persistent pain in the lower abdomen, pelvis, or lower back that may worsen during menstruation but can occur at any time.</p>
         </div>
         <div class="symptom-card" data-aos>
-          <div class="symptom-icon">😰</div>
+          <div class="symptom-icon"><svg class="icon"><use href="#icon-flame"/></svg></div>
           <h3>Painful Periods</h3>
           <p>Severe menstrual cramps (dysmenorrhea) that go far beyond typical discomfort and may not respond to over-the-counter pain relief.</p>
         </div>
         <div class="symptom-card" data-aos>
-          <div class="symptom-icon">💔</div>
+          <div class="symptom-icon"><svg class="icon"><use href="#icon-heart-crack"/></svg></div>
           <h3>Pain During Intimacy</h3>
           <p>Deep pain during or after sexual intercourse (dyspareunia), which can significantly impact relationships and quality of life.</p>
         </div>
         <div class="symptom-card" data-aos>
-          <div class="symptom-icon">🩸</div>
+          <div class="symptom-icon"><svg class="icon"><use href="#icon-droplets"/></svg></div>
           <h3>Heavy or Irregular Bleeding</h3>
           <p>Excessively heavy periods (menorrhagia) or bleeding between periods, sometimes accompanied by large clots.</p>
         </div>
         <div class="symptom-card" data-aos>
-          <div class="symptom-icon">🤰</div>
+          <div class="symptom-icon"><svg class="icon"><use href="#icon-baby"/></svg></div>
           <h3>Infertility</h3>
           <p>Up to 30–50% of those with endometriosis may experience difficulty conceiving. It is one of the leading causes of infertility.</p>
         </div>
         <div class="symptom-card" data-aos>
-          <div class="symptom-icon">😫</div>
+          <div class="symptom-icon"><svg class="icon"><use href="#icon-cloud-fog"/></svg></div>
           <h3>Fatigue &amp; Brain Fog</h3>
           <p>Chronic exhaustion, difficulty concentrating, and "endo brain fog" that persists regardless of rest or sleep quality.</p>
         </div>
         <div class="symptom-card" data-aos>
-          <div class="symptom-icon">🫄</div>
+          <div class="symptom-icon"><svg class="icon"><use href="#icon-stomach"/></svg></div>
           <h3>Digestive Issues</h3>
           <p>Bloating ("endo belly"), nausea, diarrhea, constipation, and painful bowel movements, especially during periods.</p>
         </div>
         <div class="symptom-card" data-aos>
-          <div class="symptom-icon">🚽</div>
+          <div class="symptom-icon"><svg class="icon"><use href="#icon-droplet"/></svg></div>
           <h3>Urinary Symptoms</h3>
           <p>Pain during urination, increased frequency, urgency, or blood in urine — particularly around menstruation.</p>
         </div>
       </div>
       <div class="symptoms-note">
-        <p>⚠️ <strong>Important:</strong> Experiencing one or more of these symptoms does not necessarily mean you have endometriosis, but it does warrant a conversation with your healthcare provider. Pain that disrupts your daily life is <em>never</em> normal.</p>
+        <p><svg class="icon icon-inline"><use href="#icon-alert"/></svg> <strong>Important:</strong> Experiencing one or more of these symptoms does not necessarily mean you have endometriosis, but it does warrant a conversation with your healthcare provider. Pain that disrupts your daily life is <em>never</em> normal.</p>
       </div>
     </div>
   </section>
@@ -218,6 +346,10 @@
         <h2>How is Endometriosis Diagnosed?</h2>
         <p class="section-desc">Getting diagnosed is often the hardest part. Here's what the journey may look like.</p>
       </div>
+      <div class="section-image">
+        <img src="images/diagnosis-reaching.jpg" alt="A hand reaching toward light filtering through shadows" loading="lazy">
+        <span class="photo-credit">Photo by Carrie Yang on Unsplash</span>
+      </div>
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-marker">1</div>
@@ -256,7 +388,7 @@
         </div>
       </div>
       <div class="diagnosis-tip">
-        <h3>🗣️ Advocating for Yourself</h3>
+        <h3><svg class="icon icon-inline"><use href="#icon-chat"/></svg> Advocating for Yourself</h3>
         <p>If you feel dismissed, seek a second opinion. Consider finding an endometriosis specialist (excision surgeon). You are the expert on your own body — trust your experience.</p>
       </div>
     </div>
@@ -270,10 +402,14 @@
         <h2>Treatment Options</h2>
         <p class="section-desc">While there is currently no cure for endometriosis, several approaches can help manage symptoms and improve quality of life.</p>
       </div>
+      <div class="section-image">
+        <img src="images/treatment-golden.jpg" alt="Minimalist golden-hour scene — thin sticks emerging from calm water at sunset" loading="lazy">
+        <span class="photo-credit">Photo by Tahamie Farooqui on Unsplash</span>
+      </div>
       <div class="treatment-grid">
         <div class="treatment-card">
           <div class="treatment-header">
-            <span class="treatment-icon">💊</span>
+            <span class="treatment-icon"><svg class="icon"><use href="#icon-pill"/></svg></span>
             <h3>Pain Management</h3>
           </div>
           <ul>
@@ -285,7 +421,7 @@
         </div>
         <div class="treatment-card">
           <div class="treatment-header">
-            <span class="treatment-icon">⚕️</span>
+            <span class="treatment-icon"><svg class="icon"><use href="#icon-medical"/></svg></span>
             <h3>Hormonal Therapies</h3>
           </div>
           <ul>
@@ -298,7 +434,7 @@
         <div class="treatment-card featured">
           <div class="treatment-badge">Gold Standard</div>
           <div class="treatment-header">
-            <span class="treatment-icon">🔪</span>
+            <span class="treatment-icon"><svg class="icon"><use href="#icon-scalpel"/></svg></span>
             <h3>Excision Surgery</h3>
           </div>
           <ul>
@@ -310,7 +446,7 @@
         </div>
         <div class="treatment-card">
           <div class="treatment-header">
-            <span class="treatment-icon">🧘</span>
+            <span class="treatment-icon"><svg class="icon"><use href="#icon-lotus"/></svg></span>
             <h3>Complementary Approaches</h3>
           </div>
           <ul>
@@ -334,6 +470,10 @@
         <span class="section-tag">Real Voices</span>
         <h2>Living with Endometriosis</h2>
         <p class="section-desc">Behind every statistic is a real person. These experiences reflect the daily reality of millions.</p>
+      </div>
+      <div class="section-image">
+        <img src="images/stories-window.jpg" alt="Silhouette of a person sitting in a window, contemplative" loading="lazy">
+        <span class="photo-credit">Photo by Bethany Zwag on Unsplash</span>
       </div>
       <div class="stories-grid">
         <div class="story-card">
@@ -362,7 +502,7 @@
             <div class="author-avatar">J</div>
             <div>
               <strong>Jordan, 28</strong>
-              <span>Endo warrior & advocate</span>
+              <span>Endo warrior &amp; advocate</span>
             </div>
           </div>
         </div>
@@ -380,42 +520,42 @@
       <div class="myths-grid">
         <div class="myth-card">
           <div class="myth-header">
-            <span class="myth-badge myth-false">❌ Myth</span>
+            <span class="myth-badge myth-false"><svg class="icon icon-inline"><use href="#icon-x-circle"/></svg> Myth</span>
             <h3>"It's just bad periods."</h3>
           </div>
           <p>Endometriosis is a full-body inflammatory disease. While painful periods are a common symptom, the condition affects far more than menstruation — including the bowel, bladder, diaphragm, and nervous system.</p>
         </div>
         <div class="myth-card">
           <div class="myth-header">
-            <span class="myth-badge myth-false">❌ Myth</span>
+            <span class="myth-badge myth-false"><svg class="icon icon-inline"><use href="#icon-x-circle"/></svg> Myth</span>
             <h3>"Pregnancy cures endometriosis."</h3>
           </div>
           <p>Pregnancy may temporarily suppress symptoms due to hormonal changes, but it does not cure the disease. Many experience symptom return after pregnancy, and some have symptoms throughout.</p>
         </div>
         <div class="myth-card">
           <div class="myth-header">
-            <span class="myth-badge myth-false">❌ Myth</span>
+            <span class="myth-badge myth-false"><svg class="icon icon-inline"><use href="#icon-x-circle"/></svg> Myth</span>
             <h3>"A hysterectomy is a cure."</h3>
           </div>
           <p>Removing the uterus does not remove endometrial implants elsewhere in the body. Studies show that up to 40% of those who have a hysterectomy for endo continue to have symptoms.</p>
         </div>
         <div class="myth-card">
           <div class="myth-header">
-            <span class="myth-badge myth-false">❌ Myth</span>
+            <span class="myth-badge myth-false"><svg class="icon icon-inline"><use href="#icon-x-circle"/></svg> Myth</span>
             <h3>"It only affects older women."</h3>
           </div>
           <p>Endometriosis has been diagnosed in adolescents as young as 10–11 years old. Symptoms often begin with the first menstrual period. Age should never be a reason to dismiss symptoms.</p>
         </div>
         <div class="myth-card">
           <div class="myth-header">
-            <span class="myth-badge myth-false">❌ Myth</span>
+            <span class="myth-badge myth-false"><svg class="icon icon-inline"><use href="#icon-x-circle"/></svg> Myth</span>
             <h3>"It's caused by something you did."</h3>
           </div>
           <p>Endometriosis is not caused by lifestyle choices, diet, exercise, or sexual activity. It has genetic, immunological, and environmental components that are still being researched.</p>
         </div>
         <div class="myth-card">
           <div class="myth-header">
-            <span class="myth-badge myth-false">❌ Myth</span>
+            <span class="myth-badge myth-false"><svg class="icon icon-inline"><use href="#icon-x-circle"/></svg> Myth</span>
             <h3>"If tests are normal, you're fine."</h3>
           </div>
           <p>Endometriosis often does not show on blood tests, standard ultrasounds, or physical exams. Normal test results do not mean there is nothing wrong — many need surgical confirmation.</p>
@@ -476,32 +616,32 @@
       </div>
       <div class="action-grid">
         <div class="action-card">
-          <div class="action-icon">📢</div>
+          <div class="action-icon"><svg class="icon"><use href="#icon-megaphone"/></svg></div>
           <h3>Spread Awareness</h3>
           <p>Share this website, talk about endometriosis, and help break the stigma around chronic pain and menstrual health. Use <strong>#EndoAwareness</strong> on social media.</p>
         </div>
         <div class="action-card">
-          <div class="action-icon">💛</div>
+          <div class="action-icon"><svg class="icon"><use href="#icon-heart"/></svg></div>
           <h3>Support Someone</h3>
           <p>If someone you know has endo, believe them. Learn about their condition. Ask how you can help. Sometimes just saying "I believe you" changes everything.</p>
         </div>
         <div class="action-card">
-          <div class="action-icon">💰</div>
+          <div class="action-icon"><svg class="icon"><use href="#icon-coins"/></svg></div>
           <h3>Donate to Research</h3>
           <p>Endometriosis research is critically underfunded. Donate to organizations like the Endometriosis Foundation of America or fund research directly.</p>
         </div>
         <div class="action-card">
-          <div class="action-icon">🏛️</div>
+          <div class="action-icon"><svg class="icon"><use href="#icon-building"/></svg></div>
           <h3>Advocate for Policy</h3>
           <p>Contact your representatives. Support legislation for research funding, insurance coverage, and workplace protections for those with chronic conditions.</p>
         </div>
         <div class="action-card">
-          <div class="action-icon">🩺</div>
+          <div class="action-icon"><svg class="icon"><use href="#icon-stethoscope"/></svg></div>
           <h3>Demand Better Care</h3>
           <p>Push for endometriosis education in medical schools. Support specialist training. Advocate for shorter diagnostic timelines and access to expert care.</p>
         </div>
         <div class="action-card">
-          <div class="action-icon">👕</div>
+          <div class="action-icon"><svg class="icon"><use href="#icon-shirt"/></svg></div>
           <h3>Wear Yellow</h3>
           <p>Yellow is the color of endometriosis awareness. Wear it in March — and all year — to spark conversations and show solidarity.</p>
         </div>
@@ -510,8 +650,9 @@
   </section>
 
   <!-- CTA Banner -->
-  <section class="cta-banner">
-    <div class="container">
+  <section class="cta-banner" style="position: relative; overflow: hidden;">
+    <div class="cta-bg-image"></div>
+    <div class="container" style="position: relative; z-index: 2;">
       <h2>No one should wait years to be believed.</h2>
       <p>Share this page and help someone find the answers they deserve.</p>
       <div class="cta-actions">
@@ -527,7 +668,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <span class="logo-ribbon">🎗️</span>
+          <span class="logo-ribbon"><svg class="icon icon-logo"><use href="#icon-ribbon"/></svg></span>
           <span class="footer-name">EndoAware</span>
           <p>An open-source endometriosis awareness project. Built with care to educate, support, and advocate.</p>
         </div>
@@ -549,7 +690,8 @@
       </div>
       <div class="footer-bottom">
         <p>This site is for <strong>informational purposes only</strong> and is not a substitute for professional medical advice. Always consult a qualified healthcare provider.</p>
-        <p class="footer-copy">© 2026 EndoAware · Open Source · Made with 💛 for the endo community</p>
+        <p class="footer-copy">© 2026 EndoAware · Open Source · Made with <svg class="icon icon-inline icon-heart-footer"><use href="#icon-heart"/></svg> for the endo community</p>
+        <p class="footer-built-with">Built with <a href="https://pi.dev" target="_blank" rel="noopener">pi.dev</a> + Claude Opus 4.6 via AWS Bedrock</p>
       </div>
     </div>
   </footer>

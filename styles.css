@@ -41,6 +41,56 @@
   box-sizing: border-box;
 }
 
+/* --- SVG Icon System --- */
+.icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-inline {
+  width: 1.1em;
+  height: 1.1em;
+  vertical-align: -0.15em;
+  margin-right: 0.15em;
+}
+
+.icon-heart-footer {
+  width: 0.9em;
+  height: 0.9em;
+  color: var(--color-primary);
+  fill: var(--color-primary);
+  stroke: var(--color-primary);
+}
+
+.symptom-icon .icon,
+.info-card-icon .icon {
+  width: 100%;
+  height: 100%;
+}
+
+.action-icon .icon {
+  width: 100%;
+  height: 100%;
+}
+
+.treatment-icon .icon {
+  width: 100%;
+  height: 100%;
+}
+
+.highlight-icon .icon {
+  width: 100%;
+  height: 100%;
+  color: var(--color-primary);
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
@@ -172,7 +222,14 @@ h3 { font-size: 1.25rem; }
 }
 
 .logo-ribbon {
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo-ribbon .icon-logo {
+  width: 24px;
+  height: 24px;
+  color: var(--color-primary);
 }
 
 .nav-links {
@@ -258,6 +315,15 @@ h3 { font-size: 1.25rem; }
   inset: 0;
   background: linear-gradient(135deg, #1a1720 0%, #2d1f3d 25%, #3d2044 50%, #4a2040 75%, #1a1720 100%);
   z-index: -2;
+}
+
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('images/hero-bg.jpg') center/cover no-repeat;
+  opacity: 0.18;
+  mix-blend-mode: soft-light;
 }
 
 .hero-bg::after {
@@ -399,6 +465,71 @@ h3 { font-size: 1.25rem; }
   background: var(--color-bg-warm);
 }
 
+/* ============================================
+   SECTION IMAGES
+   ============================================ */
+.about-image-banner {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 48px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+.about-image-banner img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+.section-image {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 48px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+.section-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-credit {
+  position: absolute;
+  bottom: 6px;
+  right: 10px;
+  font-size: 0.6rem;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.4);
+  background: rgba(0,0,0,0.25);
+  padding: 2px 7px;
+  border-radius: 3px;
+  backdrop-filter: blur(4px);
+  transition: opacity var(--transition);
+  opacity: 0;
+}
+
+.about-image-banner:hover .photo-credit,
+.section-image:hover .photo-credit {
+  opacity: 1;
+}
+
+.cta-bg-image {
+  position: absolute;
+  inset: 0;
+  background: url('images/cta-field.jpg') center/cover no-repeat;
+  opacity: 0.22;
+  z-index: 1;
+}
+
 .section-header {
   text-align: center;
   margin-bottom: 60px;
@@ -457,8 +588,10 @@ h3 { font-size: 1.25rem; }
 }
 
 .highlight-icon {
-  font-size: 1.5rem;
+  width: 28px;
+  height: 28px;
   flex-shrink: 0;
+  color: var(--color-primary);
 }
 
 .about-visual {
@@ -482,8 +615,10 @@ h3 { font-size: 1.25rem; }
 }
 
 .info-card-icon {
-  font-size: 1.8rem;
+  width: 32px;
+  height: 32px;
   margin-bottom: 12px;
+  color: var(--color-primary);
 }
 
 .info-card h3 {
@@ -527,8 +662,10 @@ h3 { font-size: 1.25rem; }
 }
 
 .symptom-icon {
-  font-size: 2rem;
+  width: 36px;
+  height: 36px;
   margin-bottom: 16px;
+  color: var(--color-accent);
 }
 
 .symptom-card h3 {
@@ -740,7 +877,9 @@ h3 { font-size: 1.25rem; }
 }
 
 .treatment-icon {
-  font-size: 1.6rem;
+  width: 28px;
+  height: 28px;
+  color: var(--color-primary);
 }
 
 .treatment-card ul {
@@ -984,8 +1123,10 @@ h3 { font-size: 1.25rem; }
 }
 
 .action-icon {
-  font-size: 2.5rem;
+  width: 44px;
+  height: 44px;
   margin-bottom: 16px;
+  color: var(--color-primary);
 }
 
 .action-card h3 {
@@ -1107,6 +1248,23 @@ h3 { font-size: 1.25rem; }
   font-size: 0.8rem;
 }
 
+.footer-built-with {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  margin-top: 6px;
+  letter-spacing: 0.01em;
+}
+
+.footer-built-with a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-built-with a:hover {
+  text-decoration: underline;
+}
+
 /* ============================================
    RESPONSIVE
    ============================================ */
@@ -1193,6 +1351,9 @@ h3 { font-size: 1.25rem; }
   .hero { padding: 100px 16px 60px; }
   .section { padding: 48px 0; }
   .section-header { margin-bottom: 36px; }
+  .about-image-banner img { height: 200px; }
+  .section-image img { height: 180px; }
+  .about-image-banner, .section-image { border-radius: 10px; margin-bottom: 32px; }
 }
 
 /* --- Accessibility --- */
